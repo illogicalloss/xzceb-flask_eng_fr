@@ -6,15 +6,15 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-#apikey = os.environ['apikey']
-#url = os.environ['url']
+apikey = os.environ['apikey']
+url = os.environ['url']
 
-authenticator = IAMAuthenticator('tgDj32PWjadzuQdqNRXZQeemoELi7uWxSnc-othwoeVC')
+authenticator = IAMAuthenticator(apikey)
 language_translator = LanguageTranslatorV3(\
 version='2018-05-01'\
 ,authenticator=authenticator)
 
-language_translator.set_service_url('https://api.us-south.language-translator.watson.cloud.ibm.com/instances/443227b6-f49d-4890-81b4-c9295831b64a')
+language_translator.set_service_url(url)
 
 def english_to_french(english_text):
     """
